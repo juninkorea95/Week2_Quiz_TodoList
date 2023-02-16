@@ -48,7 +48,7 @@ const initialState = {
     },
   ],
   todo: {
-    id: "0",
+    id: "",
     title: "",
     body: "",
     isDone: false,
