@@ -15,6 +15,7 @@ const List = () => {
   const onToggleStatusTodo = (id) => {
     dispatch(toggleStatusTodo(id));
   };
+  
 
   return (
     <StListContainer>
@@ -54,7 +55,7 @@ const List = () => {
       </StListWrapper>
       <h2 className="list-title">Done..! 🎉</h2>
       <StListWrapper>
-        {todos.map((todo, index) => {
+        {todos.map((todo) => {
           if (todo.isDone) {
             return (
               <StTodoContainer key={todo.id}>
@@ -74,7 +75,7 @@ const List = () => {
                   </StButton>
                   <StButton
                     borderColor="green"
-                    onClick={onToggleStatusTodo}
+                    onClick={() => onToggleStatusTodo(todo.id)}
                   >
                     {todo.isDone ? "취소!" : "완료!"}
                   </StButton>
